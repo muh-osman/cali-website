@@ -1592,7 +1592,7 @@ textarea::placeholder {
     transition: var(--main-transition);
 }
 
-.footer .box .social .facebook:hover {
+.footer .box .social .linkedin:hover {
     background-color: #1877f2;
 }
 
@@ -1636,7 +1636,7 @@ textarea::placeholder {
     content: "\F101";
     font-weight: 900;
     margin-right: 10px;
-    color: var(--main-color);
+    color: var(--main-clr);
 }
 
 .footer .box .line {
@@ -1654,7 +1654,7 @@ textarea::placeholder {
 
 .footer .box .line i {
     font-size: 25px;
-    color: var(--main-color);
+    color: var(--main-clr);
     margin-right: 10px;
 }
 
