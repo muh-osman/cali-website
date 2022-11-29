@@ -1,69 +1,29 @@
-//Skill section ==> Animate Width On Scrolling
-
-// let section = document.querySelector("#our-skills");
-// let spans = document.querySelectorAll(".progress .skill .line span");
-
-// window.onscroll = () => {
-//   if (window.scrollY >= section.offsetTop - 100) {
-//     spans.forEach((span) => {
-//       span.style.width = span.dataset.width;
-//     });
-//   }
-// };
-
-
-
-// //Stats section ==> Increase Numbers On Scrolling
-// let numSection = document.querySelector("#stats");
-// let numSpans = document.querySelectorAll(".stats .box .number");
-// let started = false;
-
-// window.onscroll = () => {
-//   if (window.scrollY >= numSection.offsetTop - 100) {
-//     if (!started) {
-//       numSpans.forEach((num) => sratrCount(num));
-//     }
-//     started = true;
-//   }
-// };
-
-// function sratrCount(el) {
-//   let goal = el.dataset.goal;
-//   let count = setInterval(() => {
-//     el.textContent++;
-//     if (el.textContent == goal) {
-//       clearInterval(count);
-//     }
-//   }, 3000 / goal);
-// }
-
-
-
-
-
-
 let progressSpans = document.querySelectorAll(".progress .skill .line span");
 let section = document.querySelector("#our-skills");
 
-let nums = document.querySelectorAll(".stats .box .number");
-let statsSection = document.querySelector("#stats");
-let started = false; // Function Started ? No
-
-window.onscroll = function () {
+function skillsAnimateWidth() {
   // Skills Animate Width
   if (window.scrollY >= section.offsetTop - 250) {
     progressSpans.forEach((span) => {
       span.style.width = span.dataset.width;
     });
   }
+}
+
+
+let nums = document.querySelectorAll(".stats .box .number");
+let statsSection = document.querySelector("#stats");
+let started = false; // Function Started ? No
+
+function statsIncreaseNumber() {
   // Stats Increase Number
   if (window.scrollY >= statsSection.offsetTop) {
     if (!started) {
       nums.forEach((num) => startCount(num));
+      started = true; //This will trigger the function one time
     }
-    started = true;
   }
-};
+}
 
 function startCount(el) {
   let goal = el.dataset.goal;
@@ -74,3 +34,40 @@ function startCount(el) {
     }
   }, 2000 / goal);
 }
+
+// Trigger the animation onscroll (Both: Skills Animate Width & Stats Increase Number)
+window.onscroll = function () {
+  skillsAnimateWidth();
+  statsIncreaseNumber();
+};
+
+
+
+// LATEST EVENTS (Countdown Timer)
+
+let countDownDate = new Date("Mar 8, 2023 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023
+
+let counter = setInterval(() => {
+  // Get Date Now (from 1970 until now in ms)
+  let dateNow = new Date().getTime();
+
+  // Find The Date Difference Between Now And Countdown Date
+  let dateDiff = countDownDate - dateNow;
+
+  // Get Time Units
+  // let days = Math.floor(dateDiff / 1000 / 60 / 60 / 24);
+  let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+
+  document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
+  document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
+  document.querySelector(".minutes").innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+  document.querySelector(".seconds").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+
+  if (dateDiff < 0) {
+    clearInterval(counter);
+  }
+
+}, 1000);
