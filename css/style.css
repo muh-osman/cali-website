@@ -366,6 +366,7 @@ nav ul li a.nav-link:hover::after {
     .hero h1,
     .hero p {
         text-align: center;
+        font-size: 36px;
     }
 
     .hero {
