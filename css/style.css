@@ -1362,11 +1362,13 @@ section#stats::before {
     position: relative;
     opacity: .8;
     transition: var(--main-transition);
+    transition-delay: 0.3s;
     box-shadow: 0 0 10px #ddd;
 }
 
 #stats .box:hover {
     opacity: 1;
+    transform: rotate(5deg);
 }
 
 #stats .box::before,
