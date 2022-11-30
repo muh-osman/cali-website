@@ -1,31 +1,40 @@
+// Skills Animate Width
 let progressSpans = document.querySelectorAll(".progress .skill .line span");
 let section = document.querySelector("#our-skills");
 
 function skillsAnimateWidth() {
-  // Skills Animate Width
+
   if (window.scrollY >= section.offsetTop - 250) {
     progressSpans.forEach((span) => {
       span.style.width = span.dataset.width;
     });
   }
+
 }
 
+// Trigger the animation onscroll
+window.addEventListener('scroll', skillsAnimateWidth);
 
+
+
+// Stats Increase Number
 let nums = document.querySelectorAll(".stats .box .number");
 let statsSection = document.querySelector("#stats");
 let started = false; // Function Started ? No
 
 function statsIncreaseNumber() {
-  // Stats Increase Number
+
   if (window.scrollY >= statsSection.offsetTop) {
     if (!started) {
       nums.forEach((num) => startCount(num));
       started = true; //This will trigger the function one time
     }
   }
+
 }
 
 function startCount(el) {
+
   let goal = el.dataset.goal;
   let count = setInterval(() => {
     el.textContent++;
@@ -33,21 +42,20 @@ function startCount(el) {
       clearInterval(count);
     }
   }, 2000 / goal);
+
 }
 
-// Trigger the animation onscroll (Both: Skills Animate Width & Stats Increase Number)
-window.onscroll = function () {
-  skillsAnimateWidth();
-  statsIncreaseNumber();
-};
+// Trigger the animation onscroll
+window.addEventListener('scroll', statsIncreaseNumber);
+
 
 
 
 // LATEST EVENTS (Countdown Timer)
-
-let countDownDate = new Date("Mar 8, 2023 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023
+let countDownDate = new Date("Mar 9, 2023 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023
 
 let counter = setInterval(() => {
+
   // Get Date Now (from 1970 until now in ms)
   let dateNow = new Date().getTime();
 
