@@ -52,14 +52,14 @@ window.addEventListener('scroll', statsIncreaseNumber);
 
 
 // LATEST EVENTS (Countdown Timer)
-let countDownDate = new Date("May 5, 2023 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023
+let countDownDate = new Date("May 5, 2023 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023 (1683320399000)
 
-let dateNow = 1696539599000; // Delete this
+let dateNow = 1675320399000; // Delete this
 let counter = setInterval(() => {
 
   // Get Date Now (from 1970 until now in ms)
   //   let dateNow = new Date().getTime();
-  dateNow = dateNow - 1000; // Delete this
+  dateNow = dateNow + 1000; // Delete this
 
   // Find The Date Difference Between Now And Countdown Date
   let dateDiff = countDownDate - dateNow;
