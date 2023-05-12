@@ -58,7 +58,7 @@ let counter = setInterval(() => {
 
   // Get Date Now (from 1970 until now in ms)
   //   let dateNow = new Date().getTime();
-     let dateNow = 1696539599000; // Delete this
+     let dateNow = 1696539599000 - 1000; // Delete this
   
   
 
