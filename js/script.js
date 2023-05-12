@@ -52,7 +52,7 @@ window.addEventListener('scroll', statsIncreaseNumber);
 
 
 // LATEST EVENTS (Countdown Timer)
-let countDownDate = new Date("May 5, 2023 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023
+let countDownDate = new Date("May 5, 2030 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023
 
 let counter = setInterval(() => {
 
