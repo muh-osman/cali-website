@@ -52,18 +52,20 @@ window.addEventListener('scroll', statsIncreaseNumber);
 
 
 // LATEST EVENTS (Countdown Timer)
-let countDownDate = new Date("May 5, 2030 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023
+let countDownDate = new Date("May 5, 2023 23:59:59").getTime(); //Number of ms from 1970 until Mar 8, 2023
 
 let counter = setInterval(() => {
 
   // Get Date Now (from 1970 until now in ms)
-  let dateNow = new Date().getTime();
+  //   let dateNow = new Date().getTime();
+     let dateNow = 1696539599000; // Delete this
+  
+  
 
   // Find The Date Difference Between Now And Countdown Date
   let dateDiff = countDownDate - dateNow;
 
   // Get Time Units
-  // let days = Math.floor(dateDiff / 1000 / 60 / 60 / 24);
   let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
   let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
