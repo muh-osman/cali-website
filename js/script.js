@@ -58,7 +58,7 @@ let dateNow = 1675320399000; // Delete this
 let counter = setInterval(() => {
 
   // Get Date Now (from 1970 until now in ms)
-  //   let dateNow = new Date().getTime();
+  //   let dateNow = new Date().getTime(); //uncomment this
   dateNow = dateNow + 1000; // Delete this
 
   // Find The Date Difference Between Now And Countdown Date
